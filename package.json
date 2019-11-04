@@ -1,6 +1,6 @@
 {
   "name": "@mindreeper2420/rhd-frontend-pattern.library",
-  "version": "0.1.0-development",
+  "version": "0.1.1-development",
   "description": "A pattern library for the rhd-frontend repo",
   "main": "index.js",
   "scripts": {
