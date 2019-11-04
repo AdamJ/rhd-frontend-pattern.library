@@ -6,8 +6,7 @@
   "scripts": {
     "clean": "gulp clean && npm install",
     "watch:library": "gulp watch",
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "semantic-release": "semantic-release"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
@@ -18,8 +17,5 @@
   "bugs": {
     "url": "https://github.com/mindreeper2420/rhd-frontend-pattern.library/issues"
   },
-  "homepage": "https://github.com/mindreeper2420/rhd-frontend-pattern.library#readme",
-  "devDependencies": {
-    "semantic-release": "^15.13.30"
-  }
+  "homepage": "https://github.com/mindreeper2420/rhd-frontend-pattern.library#readme"
 }
