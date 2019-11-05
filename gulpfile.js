@@ -53,8 +53,10 @@
 
     const cssConfig = {
 
-      dev         : dir.dev + 'sass/**/*.scss',
-      watch       : dir.src + 'sass/**/*.scss',
+      // dev         : dir.dev + 'sass/**/*.scss',
+      // watch       : dir.src + 'sass/**/*.scss',
+      dev         : dir.src + 'styles/**/*.scss',
+      watch       : dir.src + 'styles/**/*.scss',
       build       : dir.src + 'css',
       release     : dir.build + 'css',
 
@@ -85,11 +87,11 @@
     });
 
     // gulp.task('clean-dist', (done) => {
-    //   gulp.src("dist/", {read: false})
-    //   .pipe(clean());
+      gulp.src("dist/", {read: false})
+      .pipe(clean());
 
-    //   done();
-    // });
+      done();
+    });
 
     // convert custom scss files to css using PostCSS
     // @ts-ignore
@@ -107,27 +109,29 @@
     });
 
     // compile custom javascript file
-    gulp.task('js', (done) => {
-      gulp.src("dev/js/*.js")
-      .pipe(header(banner, { pkg: pkg }))
-      .pipe(gulp.dest('js'))
-      .pipe(browserSync.reload({
-        stream: true
-      }));
-      done();
-    });
+    // future js work
+    // gulp.task('js', (done) => {
+    //   gulp.src("dev/js/*.js")
+    //   .pipe(header(banner, { pkg: pkg }))
+    //   .pipe(gulp.dest('js'))
+    //   .pipe(browserSync.reload({
+    //     stream: true
+    //   }));
+    //   done();
+    // });
 
     // compile pug templates
-    gulp.task('views', (done) => {
-      gulp.src('./src/*.pug')
-      .pipe(pug({
-        doctype: 'html',
-        pretty: true
-      }))
-      .pipe(gulp.dest('./'));
+    // possible future html reference templates
+    // gulp.task('views', (done) => {
+    //   gulp.src('./src/*.pug')
+    //   .pipe(pug({
+    //     doctype: 'html',
+    //     pretty: true
+    //   }))
+    //   .pipe(gulp.dest('./'));
 
-      done();
-    });
+    //   done();
+    // });
 
     // Configure the browserSync task
     gulp.task('browserSync', (done) => {
@@ -154,20 +158,24 @@
       done();
     });
 
+    // Copy build files into the /dist directory
+    // future lines included for adding more files to the distribution
+    // @ts-ignore
     gulp.task('copy-source', gulp.series( gulp.parallel('clean-dist'), (done) => {
       gulp.src('./README.md').pipe(gulp.dest(dir.build));
       gulp.src('./package.json').pipe(gulp.dest(dir.build));
-      gulp.src('./manifest.json').pipe(gulp.dest(dir.build));
-      gulp.src('./css/*.*').pipe(gulp.dest('./dist/css'));
-      gulp.src('./js/*.*').pipe(gulp.dest('./dist/js'));
-      gulp.src('./img/**/*.*').pipe(gulp.dest('./dist/img/'));
-      gulp.src('./fonts/**/*.*').pipe(gulp.dest('./dist/fonts/'));
-      gulp.src('./*.html').pipe(gulp.dest(dir.build));
+      // gulp.src('./manifest.json').pipe(gulp.dest(dir.build));
+      gulp.src('./css/**/*.*').pipe(gulp.dest('./dist/css'));
+      // gulp.src('./js/*.*').pipe(gulp.dest('./dist/js'));
+      // gulp.src('./img/**/*.*').pipe(gulp.dest('./dist/img/'));
+      // gulp.src('./fonts/**/*.*').pipe(gulp.dest('./dist/fonts/'));
+      // gulp.src('./*.html').pipe(gulp.dest(dir.build));
 
       done();
     }));
 
     // copy FA5 webfonts
+    // future use
     // gulp.task('webfonts', (done) => {
     //   gulp.src(fonts.fontawesome)
     //   .pipe(gulp.dest('fonts/webfonts'));
@@ -180,7 +188,9 @@
     //   done();
     // });
 
-    gulp.task('build', gulp.series('css', 'js', 'views', 'fonts', gulp.parallel('copy-source'), (done) => {
+    // BCopy the files to the /dist location, running and completing the CSS build first
+    // @ts-ignore
+    gulp.task('build', gulp.series('css', gulp.parallel('copy-source'), (done) => {
       done();
     }));
 
@@ -206,7 +216,8 @@
       done();
     }));
 
-    gulp.task('default', gulp.series('css', 'js', 'views', (done) => {
+    // @ts-ignore
+    gulp.task('default', gulp.series('css' (done) => {
       done();
     }));
 
