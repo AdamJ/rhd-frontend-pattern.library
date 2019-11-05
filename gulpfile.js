@@ -53,8 +53,6 @@
 
     const cssConfig = {
 
-      // dev         : dir.dev + 'sass/**/*.scss',
-      // watch       : dir.src + 'sass/**/*.scss',
       dev         : dir.src + 'styles/**/*.scss',
       watch       : dir.src + 'styles/**/*.scss',
       build       : dir.src + 'css',
@@ -87,11 +85,10 @@
     });
 
     // gulp.task('clean-dist', (done) => {
-      gulp.src("dist/", {read: false})
-      .pipe(clean());
-
-      done();
-    });
+    //   gulp.src("dist/", {read: false})
+    //   .pipe(clean());
+    //   done();
+    // });
 
     // convert custom scss files to css using PostCSS
     // @ts-ignore
@@ -188,7 +185,7 @@
     //   done();
     // });
 
-    // BCopy the files to the /dist location, running and completing the CSS build first
+    // Copy the files to the /dist location, running and completing the CSS build first
     // @ts-ignore
     gulp.task('build', gulp.series('css', gulp.parallel('copy-source'), (done) => {
       done();
@@ -196,7 +193,8 @@
 
     // Dev task with browserSync
     // @ts-ignore
-    gulp.task('serve', gulp.series('css', 'js', (done) => {
+    // gulp.task('serve', gulp.series('css', 'js', (done) => {
+      gulp.task('serve', gulp.series('css', (done) => {
       browserSync.init({
         server: {
           baseDir: "./"
@@ -217,7 +215,7 @@
     }));
 
     // @ts-ignore
-    gulp.task('default', gulp.series('css' (done) => {
+    gulp.task('default', gulp.series('css', (done) => {
       done();
     }));
 
