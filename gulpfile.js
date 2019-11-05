@@ -168,21 +168,17 @@
     }));
 
     // copy FA5 webfonts
-    gulp.task('webfonts', (done) => {
-      gulp.src(fonts.fontawesome)
-      .pipe(gulp.dest('fonts/webfonts'))
-      // .pipe(browserSync.reload({
-      //   stream: true
-      // }));
+    // gulp.task('webfonts', (done) => {
+    //   gulp.src(fonts.fontawesome)
+    //   .pipe(gulp.dest('fonts/webfonts'));
+    //   done();
+    // });
 
-      done();
-    });
-
-    gulp.task('fonts', (done) => {
-      gulp.src(fonts.overpassmono).pipe(gulp.dest(dir.build + 'fonts/overpass-mono-webfont'));
-      gulp.src(fonts.overpassmono).pipe(gulp.dest(dir.build + 'fonts/overpass-webfont'));
-      done();
-    });
+    // gulp.task('fonts', (done) => {
+    //   gulp.src(fonts.overpassmono).pipe(gulp.dest(dir.build + 'fonts/overpass-mono-webfont'));
+    //   gulp.src(fonts.overpassmono).pipe(gulp.dest(dir.build + 'fonts/overpass-webfont'));
+    //   done();
+    // });
 
     gulp.task('build', gulp.series('css', 'js', 'views', 'fonts', gulp.parallel('copy-source'), (done) => {
       done();
