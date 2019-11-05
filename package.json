@@ -6,6 +6,7 @@
   "scripts": {
     "clean": "gulp clean-dist && npm install",
     "build": "gulp",
+    "distribute": "gulp build",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -18,6 +19,9 @@
     "url": "https://github.com/mindreeper2420/rhd-frontend-pattern.library/issues"
   },
   "homepage": "https://github.com/mindreeper2420/rhd-frontend-pattern.library#readme",
+  "dependencies": {
+    "@patternfly/patternfly": "2.40.6"
+  },
   "devDependencies": {
     "autoprefixer": "9.6.1",
     "browser-sync": "2.26.7",

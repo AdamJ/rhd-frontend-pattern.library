@@ -1,0 +1,44 @@
+{
+  "name": "@mindreeper2420/rhd-frontend-pattern.library",
+  "version": "0.2.0-development",
+  "description": "A pattern library for the rhd-frontend repo",
+  "main": "index.js",
+  "scripts": {
+    "clean": "gulp clean-dist && npm install",
+    "build": "gulp",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mindreeper2420/rhd-frontend-pattern.library.git"
+  },
+  "author": "Adam J. Jolicoeur",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/mindreeper2420/rhd-frontend-pattern.library/issues"
+  },
+  "homepage": "https://github.com/mindreeper2420/rhd-frontend-pattern.library#readme",
+  "dependencies": {
+    "@patternfly/patternfly": "2.40.6"
+  },
+  "devDependencies": {
+    "autoprefixer": "9.6.1",
+    "browser-sync": "2.26.7",
+    "cssnano": "4.1.10",
+    "del": "^5.1.0",
+    "gulp": "4.0.2",
+    "gulp-clean": "0.4.0",
+    "gulp-header": "^2.0.9",
+    "gulp-imagemin": "^6.1.1",
+    "gulp-newer": "^1.4.0",
+    "gulp-noop": "^1.0.0",
+    "gulp-postcss": "8.0.0",
+    "gulp-pug": "4.0.1",
+    "gulp-rename": "1.4.0",
+    "gulp-sass": "4.0.2",
+    "gulp-size": "^3.0.0",
+    "gulp-sourcemaps": "2.6.5",
+    "postcss-assets": "^5.0.0",
+    "usedcss": "^1.0.7"
+  }
+}

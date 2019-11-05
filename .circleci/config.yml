@@ -33,5 +33,7 @@ jobs:
             - node_modules
           key: v1-dependencies-{{ checksum "package.json" }}
 
+      # run Gulp
+        - run: gulp build
       # run tests!
       # - run: npm run test
