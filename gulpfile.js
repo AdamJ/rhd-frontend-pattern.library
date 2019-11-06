@@ -53,9 +53,9 @@
 
     const cssConfig = {
 
-      dev         : dir.src + 'styles/**/*.scss',
-      watch       : dir.src + 'styles/**/*.scss',
-      build       : dir.src + 'css',
+      dev         : dir.dev + 'styles/**/*.scss',
+      watch       : dir.dev + 'styles/**/*.scss',
+      build       : dir.dev + 'css',
       release     : dir.build + 'css',
 
       sassOpts: {
@@ -162,7 +162,7 @@
       gulp.src('./README.md').pipe(gulp.dest(dir.build));
       gulp.src('./package.json').pipe(gulp.dest(dir.build));
       // gulp.src('./manifest.json').pipe(gulp.dest(dir.build));
-      gulp.src('./css/**/*.*').pipe(gulp.dest('./dist/css'));
+      gulp.src('./dev/css/**/*.*').pipe(gulp.dest('./dist/css'));
       // gulp.src('./js/*.*').pipe(gulp.dest('./dist/js'));
       // gulp.src('./img/**/*.*').pipe(gulp.dest('./dist/img/'));
       // gulp.src('./fonts/**/*.*').pipe(gulp.dest('./dist/fonts/'));
@@ -206,10 +206,10 @@
         reloadOnRestart: true,
         notify: false // prevent the browserSync notification from appearing
       });
-      gulp.watch('dev/sass/**/*.scss', gulp.series('sass-watch'));
-      gulp.watch('src/**/*.pug', gulp.series('views'));
-      gulp.watch('dev/js/*.js', gulp.series('js'));
-      gulp.watch('*.html').on('change', browserSync.reload);
+      gulp.watch('dev/styles/**/*.scss', gulp.series('sass-watch'));
+      // gulp.watch('src/**/*.pug', gulp.series('views'));
+      // gulp.watch('dev/js/*.js', gulp.series('js'));
+      // gulp.watch('*.html').on('change', browserSync.reload);
 
       done();
     }));
